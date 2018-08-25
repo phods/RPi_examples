@@ -1,7 +1,7 @@
 import sys
 import paho.mqtt.client as mqtt # importa o pacote mqtt
 import RPi.GPIO as GPIO
-
+#sudo pip install paho-mqtt
 ledPin = 11
 
 broker = "test.mosquitto.org" # define o host do broker mqtt'
@@ -9,9 +9,17 @@ port = 1883 # define a porta do broker
 keppAlive = 60 # define o keepAlive da conexao
 topic = 'AGK/#' # define o topico que este script assinara
 
+"""
+cliente para mobile MyMQTT
+- test.mosquitto.org
+- 1883
+"""
+
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(ledPin, GPIO.OUT)
+
+
 
 # funcao on_connect sera atribuida e chamada quando a conexao for iniciada
 # ela printara na tela caso tudo ocorra certo durante a tentativa de conexao
